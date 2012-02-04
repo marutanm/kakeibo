@@ -4,7 +4,7 @@ class Payment
 
   # field <name>, :type => <type>, :default => <value>
   field :title, :type => String
-  field :value, :type => Integer
+  field :price, :type => Integer
 
   # You can define indexes on documents using the index macro:
   # index :field <, :unique => true>
