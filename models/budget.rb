@@ -9,5 +9,9 @@ class Budget
   embeds_many :payments
 
   validates_length_of :yearmonth, in: 6..6
-  
+
+  def update_total
+    update_attribute(:total, payments.collect{|p| p.price}.inject(&:+) )
+  end
+
 end

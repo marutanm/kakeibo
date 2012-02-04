@@ -11,6 +11,7 @@ Kakeibo.controllers  do
       p.price = params[:price]
       p.genre = params[:genre]
     end
+    current_budget.update_total
     redirect ''
   end
 
