@@ -1,7 +1,9 @@
+-# -*- encoding: utf-8 -*-
 - @sum = 0
 - @payment.each do |payment|
   - @sum = @sum + payment.price
   %div{ :style => 'border: thin;' }
+    %span= "#{payment.created_at.strftime("%d %a")}"
     %span= payment.title
     %span= "#{payment.price} JPY"
 %hr
