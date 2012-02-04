@@ -1,7 +1,7 @@
 Kakeibo.controllers  do
 
   get :index do
-    @payment = Payment.all
+    @budget = Budget.all
     haml :list
   end
   
