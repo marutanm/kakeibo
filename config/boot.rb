@@ -18,6 +18,7 @@ Bundler.require(:default, PADRINO_ENV)
 # Add your before load hooks here
 #
 Padrino.before_load do
+  CONFIG = YAML.load_file("config/genre.yml")
 end
 
 ##
