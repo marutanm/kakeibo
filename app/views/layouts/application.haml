@@ -1,10 +1,12 @@
 -# -*- encoding: utf-8 -*-
 !!!
+%title かけいぼ！
+
 - form_tag '/', :method => 'post' do
+  = select_tag :genre, :options => [ ['食費', 'food'], ['雑費', 'incidental'], ['固定費', 'fixed'], ['公共料金', 'public'], ['おこづかい', 'fee'], ['クレジットカード', 'card']]
   = text_field_tag :title, :value => params[:title], :placeholder => 'なにに', :required => ''
   = text_field_tag :price, :value => params[:price], :placeholder => 'いくら', :type => 'number', :required => '', :step => '100', :min => '100'
-  = select_tag :genre, :options => [ ['食費', 'food'], ['雑費', 'incidental'], ['固定費', 'fixed'], ['公共料金', 'public'], ['おこづかい', 'fee'], ['クレジットカード', 'card']]
-  = submit_tag
+  = submit_tag 'つかった'
 %hr
 
 = yield
