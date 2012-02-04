@@ -1,12 +1,13 @@
-class Payment
+class Budget
   include Mongoid::Document
   include Mongoid::Timestamps # adds created_at and updated_at fields
 
   # field <name>, :type => <type>, :default => <value>
-  field :genre, :type => String
-  field :title, :type => String
-  field :price, :type => Integer
+  field :total, :type => Integer
+  field :yearmonth, :type => String
 
-  embedded_in :budget
+  embeds_many :payments
 
+  validates_length_of :yearmonth, in: 6..6
+  
 end
