@@ -10,8 +10,7 @@ Kakeibo.controllers  do
       p.title = params[:title]
       p.price = params[:price]
     end
-    @payment = Payment.all
-    haml :list
+    redirect ''
   end
 
 end
