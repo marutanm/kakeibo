@@ -1,4 +1,8 @@
+- @sum = 0
 - @payment.each do |payment|
+  - @sum = @sum + payment.price
   %div{ :style => 'border: thin;' }
     %span= payment.title
     %span= "#{payment.price} JPY"
+%hr
+%p= "total: #{@sum} JPY"
