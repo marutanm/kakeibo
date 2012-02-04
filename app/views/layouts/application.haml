@@ -1,10 +1,9 @@
+-# -*- encoding: utf-8 -*-
+!!!
 - form_tag '/', :method => 'post' do
-  = label_tag :title
-  = text_field_tag :title, :value => params[:title]
-  = label_tag :price
-  = text_field_tag :price, :value => params[:price]
-  = label_tag :genre
-  = select_tag :genre, :options => ['food', 'incidental']
+  = text_field_tag :title, :value => params[:title], :placeholder => 'なにに', :required => ''
+  = text_field_tag :price, :value => params[:price], :placeholder => 'いくら', :type => 'number', :required => ''
+  = select_tag :genre, :options => ['食費', '雑費']
   = submit_tag
 %hr
 
