@@ -6,9 +6,10 @@ Kakeibo.controllers  do
   end
   
   post :index do
-    Payment.create do |p|
+    current_budget.payments.create do |p|
       p.title = params[:title]
       p.price = params[:price]
+      p.genre = params[:genre]
     end
     redirect ''
   end
