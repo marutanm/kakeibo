@@ -4,3 +4,4 @@ tmp/
 bin/
 vendor/
 .sass-cache/*
+public/stylesheets/
