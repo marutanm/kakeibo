@@ -1,12 +1,13 @@
 -# -*- encoding: utf-8 -*-
 - @budget.each do |budget|
-  %h2= budget.yearmonth
-  - CONFIG.keys.each do |genre|
-    %h3= genre
-    - budget.payments.where(genre: genre).each do |payment|
-      %div{ :style => 'border: thin;' }
-        %span= "#{payment.created_at.strftime("%d %a")}"
-        %span= payment.title
-        %span= "#{payment.price} JPY"
-  %hr
+  .row
+    %h2= budget.yearmonth
+    - CONFIG.keys.each do |genre|
+      .span2
+        %h4= CONFIG[genre]
+        - budget.payments.where(genre: genre).each do |payment|
+          .row
+            -# .span1= "#{payment.created_at.strftime("%d %a")}"
+            .span1= payment.title
+            .span1= "#{payment.price} JPY"
   %p= "total: #{budget.total} JPY"

@@ -1,13 +1,17 @@
 -# -*- encoding: utf-8 -*-
 !!!
-= stylesheet_link_tag 'bootstrap.min'
+= stylesheet_link_tag 'bootstrap.min', 'style'
 %title かけいぼ！
 
-- form_tag '/', :method => 'post' do
-  = select_tag :genre, :options => CONFIG.to_a.map{|genre| genre.reverse}
-  = text_field_tag :title, :value => params[:title], :placeholder => 'なにに', :required => ''
-  = text_field_tag :price, :value => params[:price], :placeholder => 'いくら', :type => 'number', :required => '', :step => '100', :min => '100'
-  = submit_tag 'つかった'
-%hr
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      .brand かけいぼ！
+      - form_tag '/', :method => 'post' do
+        = select_tag :genre, :options => CONFIG.to_a.map{|genre| genre.reverse}
+        = text_field_tag :title, :value => params[:title], :placeholder => 'なにに', :required => ''
+        = text_field_tag :price, :value => params[:price], :placeholder => 'いくら', :type => 'number', :required => '', :step => '100', :min => '100'
+        = submit_tag 'つかった'
 
-= yield
+.container
+  = yield
