@@ -1,5 +1,12 @@
 body {
   padding-top: 40px;
+  h1 {
+    display: inline-block;
+  }
+  .label {
+    font-size: 15px;
+    float: right;
+  }
   .navbar {
     .brand {
       float: right;
@@ -10,5 +17,8 @@ body {
         margin: 0 !important;
       }
     }
+  }
+  .price {
+    text-align: right;
   }
 }
