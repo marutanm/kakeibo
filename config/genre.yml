@@ -1,13 +1,6 @@
-# [[ label1, genre1 ], [label2, genre2 ]]
-- - 食費
-  - food
-- - 雑費
-  - incidental
-- - 固定費
-  - fixed
-- - 公共料金
-  - public
-- - おこづかい
-  - fee
-- - クレジットカード
-  - card
+food: 食費
+incidental: 雑費
+fixed: 固定費
+public: 公共料金
+fee: おこづかい
+card: クレジットカード
