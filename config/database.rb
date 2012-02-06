@@ -1,15 +1,18 @@
+if mongo_uri = ENV['MONGOHQ_URL']
+  Mongoid.database = Mongo::Connection.from_uri(mongo_uri).
+    db(URI.parse(mongo_uri).path.gsub(/^\//, ''))
+else
+  # Connection.new takes host, port
+  host = 'localhost'
+  port = Mongo::Connection::DEFAULT_PORT
 
-# Connection.new takes host, port
-host = 'localhost'
-port = Mongo::Connection::DEFAULT_PORT
-
-database_name = case Padrino.env
-  when :development then 'kakeibo_development'
-  when :production  then 'kakeibo_production'
-  when :test        then 'kakeibo_test'
+  database_name = case Padrino.env
+                  when :development then 'kakeibo_development'
+                  when :production  then 'kakeibo_production'
+                  when :test        then 'kakeibo_test'
+                  end
+  Mongoid.database = Mongo::Connection.new(host, port).db(database_name)
 end
-
-Mongoid.database = Mongo::Connection.new(host, port).db(database_name)
 
 # You can also configure Mongoid this way
 # Mongoid.configure do |config|
