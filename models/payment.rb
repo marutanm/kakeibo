@@ -7,6 +7,6 @@ class Payment
   field :title, :type => String
   field :price, :type => Integer
 
-  embedded_in :budget
+  belongs_to :budget
 
 end

@@ -6,7 +6,7 @@ class Budget
   field :total, :type => Integer
   field :yearmonth, :type => String
 
-  embeds_many :payments
+  has_many :payments
 
   validates_length_of :yearmonth, in: 6..6
 
