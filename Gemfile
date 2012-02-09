@@ -10,6 +10,8 @@ gem 'sinatra-flash', :require => 'sinatra/flash'
 gem 'pry-padrino'
 
 # Component requirements
+gem 'rack-coffee', :require => "rack/coffee"
+gem 'coffee-script'
 gem 'sass'
 gem 'haml'
 gem 'mongoid'

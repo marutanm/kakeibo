@@ -1,4 +1,5 @@
 class Kakeibo < Padrino::Application
+  register CoffeeInitializer
   register ScssInitializer
   register Padrino::Rendering
   register Padrino::Mailer
