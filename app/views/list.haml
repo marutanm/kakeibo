@@ -13,9 +13,9 @@
             - budget.payments.where(genre: genre).each do |payment|
               %tr
                 -# .span1= "#{payment.created_at.strftime("%d %a")}"
-                - if now - payment.created_at < 1.hours
-                  %td
+                %td= payment.title
+                %td.price
+                  - if now - payment.created_at < 1.hours
                     %span.label.label-important
                       %i.icon-trash.icon-white
-                %td= payment.title
-                %td.price= payment.price
+                  = payment.price
