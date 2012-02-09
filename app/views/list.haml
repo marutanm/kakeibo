@@ -1,7 +1,7 @@
 -# -*- encoding: utf-8 -*-
 - @budget.each do |budget|
   %h1= "#{budget.total} JPY"
-  %span.label= budget.yearmonth
+  %span.label.yearmonth= budget.yearmonth
   .row
     - CONFIG.keys.each do |genre|
       .span2
@@ -12,5 +12,8 @@
             - budget.payments.where(genre: genre).each do |payment|
               %tr
                 -# .span1= "#{payment.created_at.strftime("%d %a")}"
+                %td
+                  %span.label.label-important
+                    %i.icon-trash.icon-white
                 %td= payment.title
                 %td.price= payment.price
