@@ -15,4 +15,9 @@ Kakeibo.controllers  do
     redirect ''
   end
 
+  post '/delete/:id' do
+    Payment.find(params[:id]).delete
+    current_budget.update_total
+  end
+
 end
