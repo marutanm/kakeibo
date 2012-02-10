@@ -18,6 +18,8 @@ Kakeibo.controllers  do
   post '/delete/:id' do
     Payment.find(params[:id]).delete
     current_budget.update_total
+    content_type :json
+    { total: current_budget.total }.to_json
   end
 
 end
