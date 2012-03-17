@@ -4,15 +4,15 @@
 = javascript_include_tag 'jquery', 'application'
 %title かけいぼ！
 
-.navbar.navbar-fixed-top
+.navbar
   .navbar-inner
     .container
-      .brand かけいぼ！
-      - form_tag '/', :method => 'post' do
+      - form_tag '/', :class => 'navbar-form pull-left', :method => 'post' do
         = select_tag :genre, :options => CONFIG.to_a.map{|genre| genre.reverse}, :class => 'span2'
         = text_field_tag :title, :value => params[:title], :placeholder => 'なにに', :required => '', :class => 'span3'
         = text_field_tag :price, :value => params[:price], :placeholder => 'いくら', :type => 'number', :required => '', :step => '100', :min => '100'
         = submit_tag 'つかった', :class => 'btn'
+        .brand かけいぼ！
 
 .container
   = yield
