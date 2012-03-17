@@ -1,7 +1,7 @@
 Kakeibo.controllers  do
 
   get :index do
-    @budget = Budget.all
+    @budget = Budget.all.desc(:yearmonth)
     haml :list
   end
   
